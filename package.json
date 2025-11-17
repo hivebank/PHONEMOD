@@ -1,0 +1,13 @@
+{
+  "name": "phonemod-voice-agent",
+  "version": "1.0.0",
+  "description": "AI Voice Agent Backend Server",
+  "main": "backend/src/server.js",
+  "scripts": {
+    "start": "cd backend && npm start",
+    "postinstall": "cd backend && npm install"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}
