@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="24dp">
+
+        <!-- App Title -->
+        <TextView
+            android:id="@+id/titleText"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="@string/app_name"
+            android:textSize="28sp"
+            android:textStyle="bold"
+            android:gravity="center"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginBottom="8dp" />
+
+        <!-- Status Text -->
+        <TextView
+            android:id="@+id/statusText"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="Status: Not configured"
+            android:textSize="16sp"
+            android:gravity="center"
+            android:padding="12dp"
+            android:background="@android:color/darker_gray"
+            android:textColor="@android:color/white"
+            app:layout_constraintTop_toBottomOf="@id/titleText"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginTop="16dp" />
+
+        <!-- Backend Configuration Section -->
+        <TextView
+            android:id="@+id/backendSectionTitle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="Backend Configuration"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            app:layout_constraintTop_toBottomOf="@id/statusText"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginTop="32dp" />
+
+        <EditText
+            android:id="@+id/backendUrlInput"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:hint="Enter backend URL (e.g., your-app.railway.app)"
+            android:inputType="textUri"
+            android:padding="12dp"
+            app:layout_constraintTop_toBottomOf="@id/backendSectionTitle"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginTop="8dp" />
+
+        <Button
+            android:id="@+id/saveUrlButton"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="Save Backend URL"
+            app:layout_constraintTop_toBottomOf="@id/backendUrlInput"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginTop="8dp" />
+
+        <Button
+            android:id="@+id/testConnectionButton"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="Test Connection"
+            app:layout_constraintTop_toBottomOf="@id/saveUrlButton"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginTop="8dp" />
+
+        <!-- Permissions Section -->
+        <TextView
+            android:id="@+id/permissionsSectionTitle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="Permissions"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            app:layout_constraintTop_toBottomOf="@id/testConnectionButton"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginTop="32dp" />
+
+        <TextView
+            android:id="@+id/permissionsStatusText"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="Permissions status"
+            android:textSize="14sp"
+            android:padding="8dp"
+            app:layout_constraintTop_toBottomOf="@id/permissionsSectionTitle"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginTop="8dp" />
+
+        <Button
+            android:id="@+id/requestPermissionsButton"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="Request Permissions"
+            app:layout_constraintTop_toBottomOf="@id/permissionsStatusText"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginTop="8dp" />
+
+        <!-- Default Phone App Section -->
+        <TextView
+            android:id="@+id/defaultPhoneSectionTitle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="Default Phone App"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            app:layout_constraintTop_toBottomOf="@id/requestPermissionsButton"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginTop="32dp" />
+
+        <TextView
+            android:id="@+id/defaultPhoneDescription"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="This app must be set as your default phone app to automatically answer incoming calls."
+            android:textSize="14sp"
+            android:padding="8dp"
+            app:layout_constraintTop_toBottomOf="@id/defaultPhoneSectionTitle"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginTop="8dp" />
+
+        <Button
+            android:id="@+id/setDefaultPhoneButton"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="Set as Default Phone App"
+            app:layout_constraintTop_toBottomOf="@id/defaultPhoneDescription"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginTop="8dp" />
+
+        <!-- Instructions -->
+        <TextView
+            android:id="@+id/instructionsTitle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="Instructions"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            app:layout_constraintTop_toBottomOf="@id/setDefaultPhoneButton"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginTop="32dp" />
+
+        <TextView
+            android:id="@+id/instructionsText"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="1. Enter your backend URL\n2. Grant all permissions\n3. Set as default phone app\n4. Test connection\n5. When ready, incoming calls will be answered automatically"
+            android:textSize="14sp"
+            android:padding="8dp"
+            android:lineSpacingMultiplier="1.2"
+            app:layout_constraintTop_toBottomOf="@id/instructionsTitle"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="16dp" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</ScrollView>
